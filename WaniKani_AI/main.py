@@ -15,7 +15,7 @@ from wanikani_assistant.audio_generator import AudioGenerator
 
 # Config - change if you want
 DECK_NAME = os.getenv("WK_DECK_NAME", "Test Script Wk deck")
-SVENSKA_MODEL_NAME = os.getenv("SVENSKA_MODEL_NAME", "📚 Swedish, Svenska, Sentences, Audio - Rasmus Ek Preply")
+SVENSKA_MODEL_NAME = os.getenv("SVENSKA_MODEL_NAME", "Basic+")
 ANKI_CONNECT_URL = os.getenv("ANKI_CONNECT_URL", "http://localhost:8765")
 MEDIA_FOLDER = "media"
 
@@ -248,3 +248,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
