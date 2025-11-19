@@ -23,7 +23,7 @@ class AIAgent:
     def __init__(self, model: Optional[str] = None):
         self.model = model or DEFAULT_MODEL
         self.enabled = client is not None
-        self.is_o3 = self.model.startswith("o3")
+        self.is_o = self.model.startswith("o")
 
     # =============================================================
     # Prepare payload safely (fixes o3-mini illegal params)
@@ -34,11 +34,12 @@ class AIAgent:
             "messages": history,
         }
 
-        # o3-models cannot accept temperature or max_tokens
-        if self.is_o3:
-            payload["max_completion_tokens"] = 450
+        # o models cannot accept temperature or max_tokens
+        if self.is_o:
+            payload["max_completion_tokens"] = 2000
+
         else:
-            payload["max_tokens"] = 450
+            payload["max_tokens"] = 2000
 
         return payload
 
@@ -138,3 +139,4 @@ class AIAgent:
             "3) Image idea? (/skip OK)\n"
             "4) English translation? (skip if auto-detected)\n"
         )
+
