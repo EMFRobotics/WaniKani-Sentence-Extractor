@@ -1,0 +1,6 @@
+openai
+requests
+pyperclip
+pillow
+gtts
+python-dotenv
