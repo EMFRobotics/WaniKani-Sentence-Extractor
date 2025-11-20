@@ -42,6 +42,9 @@ class AIAgent:
             f"JAPANESE SENTENCE (DO NOT ALTER): {jp_sentence}\n"
             f"ENGLISH SENTENCE (AUTHORITATIVE — DO NOT ALTER): {eng_translation}\n\n"
             "INSTRUCTIONS FOR THE ASSISTANT:\n"
+            "0) First, provide one short line identifying the REGISTER/FORMALITY of the Japanese sentence\n"
+            "   (e.g., casual, rough, neutral, polite, humble, honorific). Do NOT reinterpret the English.\n"
+            "\n"
             "1) Produce a numbered list of mappings in the exact form:\n"
             "   1) 「<Japanese substring>」 -> \"<exact substring from the provided English>\" — <one-line reason>\n"
             "2) Only include mappings where the Japanese substring actually appears in the JP sentence and the English substring exactly appears in the provided English sentence.\n"
@@ -167,5 +170,6 @@ class AIAgent:
             "3) Image idea? (/skip OK)\n"
             "4) English translation? (skip if auto-detected)\n"
         )
+
 
 
