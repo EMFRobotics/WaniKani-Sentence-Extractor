@@ -63,7 +63,7 @@ def add_note_to_anki(deck_name, model_name, fields: dict, tags=None):
         "deckName": deck_name,
         "modelName": model_name,
         "fields": fields,
-        "options": {"allowDuplicate": False},
+        "options": {"allowDuplicate": True},
         "tags": tags or []
     }
     resp = invoke_anki("addNote", {"note": note})
@@ -248,5 +248,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
