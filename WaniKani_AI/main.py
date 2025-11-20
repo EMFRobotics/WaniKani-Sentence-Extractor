@@ -110,7 +110,7 @@ def main():
                 print("EN:", eng_sentence_auto)
 
             # Start conversation
-            conv_result, history = ai.start_conversation(jp_sentence)
+            conv_result, history = ai.start_conversation(jp_sentence, eng_sentence_auto)
             if conv_result is None and history is None:
                 print("No card created. Listening...\n")
                 continue
@@ -133,7 +133,7 @@ def main():
             else:
                 print("\nPreparing to create card. Please answer:")
                 if hasattr(ai, "request_card_metadata"):
-                    print(ai.request_card_metadata(jp_sentence))
+                    print(ai.request_card_metadata(jp_sentence, eng_sentence_auto))
 
                 target_word = safe_input("1) Target Japanese word (exact substring from sentence): ").strip()
                 english_word = safe_input("2) English meaning of that word: ").strip()
@@ -248,4 +248,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
